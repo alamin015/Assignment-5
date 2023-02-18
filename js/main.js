@@ -1,3 +1,5 @@
+
+
 // Area of triangle 
 document.getElementById('triangle-btn').addEventListener('click',() => {
 
@@ -8,7 +10,12 @@ document.getElementById('triangle-btn').addEventListener('click',() => {
         let area = (0.5*height*base).toFixed(2);
         setInnerText("Triangle",area)
     }else {
-        error();
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please input valid number!',
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
     }
 
 });
@@ -26,7 +33,12 @@ document.getElementById('rectangular-btn').addEventListener('click',() => {
         let area = (width*length).toFixed(2);
         setInnerText("Rectangular",area)
     }else {
-        error();
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please input valid number!',
+            // footer: '<a href="">Why do I have this issue?</a>'
+          });
     }
 
 });
@@ -83,9 +95,9 @@ function inputValue(id) {
 function setInnerText(shape,value) {
 
     let textSpace = document.getElementById("ol");
-    const html = `<span>cm<sup>2</sup></span>`;
+    const html = `<span>cm<sup>2</sup></span> <button class="btn convert">convert to m<sup>2</sup></button>  `;
     let li = document.createElement('li');
-    li.innerHTML = `${shape}   ${value} ${html}`;
+    li.innerHTML = `${shape}   <span id="${shape}">${value}</span> ${html}`;
     textSpace.appendChild(li);
 };
 
@@ -113,10 +125,15 @@ for(let item of card){
     });
 };
 
-function error(){
-    let err = document.getElementById("error");
-    err.classList.add("active");
-    setTimeout(() => {
-        err.classList.remove("active")
-    }, 3000);
-}
+
+// mouseleave function 
+
+for(let item of card){
+    item.addEventListener("mouseleave",() => {
+        item.style.background = "#fff";
+    });
+};
+
+
+
+

@@ -128,7 +128,7 @@ section {
     border: 1px solid #cfcdcd;
     border-radius: 4px;
     padding: 25px;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .output-content .output-content-heading {
@@ -143,30 +143,18 @@ section {
 .output-content-heading {
     margin-bottom: 20px;
 }
+
 #ol li {
     margin-bottom: 10px;
-}
-.error {
-    margin-top: 20px;
-}
-
-#error {
-    background: rgb(252, 109, 109);
-    padding: 13px 30px;
-    border-radius: 4px;
-    font-size: 20px;
-    color: #fff;
-    position: fixed;
-    top: -300px;
-    right: 10px;
-    visibility: hidden;
-    transition: all 0.4s ease-in-out;
     white-space: nowrap;
 }
-#error.active {
-    top: 30px;
-    visibility: visible;
+#ol li .btn{
+    padding: 6px 20px;
+    margin-left: 10px;
 }
+
+
+
 
     
 
